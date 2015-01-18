@@ -1,6 +1,6 @@
 if (Schools.find().count() === 0) {
   Schools.insert({
-   "user": "mlecoq",
+   "user": "6rBSD7aAvLkobd24X",
    "school": "Lycée Châteaubriand",
    "period": "2014-2015",
    "classrooms": [
