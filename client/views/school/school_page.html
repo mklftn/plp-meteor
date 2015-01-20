@@ -1,5 +1,39 @@
 <template name="schoolPage">
-	{{#each schools}}
 	{{> schoolItem}}
-	{{/each}}
+
+	{{> openCreateEtabPopin}}
+	{{> createEtabPopin}}
+</template>
+
+
+<template name="createEtabPopin">
+  <div class="modal fade in" id="createEtabPopin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Créer un établissement</h4>
+
+          <form class="main">
+    		<div class="control-group">
+        		<label class="control-label" for="nom">Nom</label>
+        		<div class="controls">
+            		<input name="nom" type="text" value="" placeholder="Le nom de votre établissement"/>
+        		</div>
+    		</div>
+    		<div class="control-group">
+        		<div class="controls">
+            		<input type="submit" value="Submit" class="btn btn-primary"/>
+        		</div>
+    		</div>
+    	  </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="openCreateEtabPopin">
+ <input type="button" class="open-modal" value="Ajouter Etablissement" />
 </template>
