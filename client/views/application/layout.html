@@ -1,9 +1,13 @@
+<head>
+	<title> Pour Les Profs </title>
+	<link rel="shortcut icon" sizes="16x16 32x32" type="image/png" href="/image/ico.png" />
+	<link href="style.less" rel="stylesheet" type="text/css" />
+</head>
 <template name="layout">
-  <div class="container">
-    {{>header}}
-  
-    <div id="main" class="row-fluid">
-      {{> yield}}
-    </div>
-  </div>
+	<div class="container">
+		{{>header}}
+
+		{{> yield}}
+
+	</div>
 </template>
