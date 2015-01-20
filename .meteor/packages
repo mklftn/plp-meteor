@@ -5,7 +5,8 @@
 # but you can also edit it by hand.
 
 meteor-platform
-bootstrap
 iron:router
 accounts-ui
 accounts-password
+less
+bootstrap
