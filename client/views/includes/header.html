@@ -4,8 +4,8 @@
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar">bla</span>
-        <span class="icon-bar">ble</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand logo" href="{{pathFor 'homePage'}}"></a>
@@ -17,25 +17,33 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Mes données <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> {{_ "donnees"}} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#"> Mes classes</a></li>
-            <li><a href="#">Mes salles</a></li>
-            <li><a href="#">Mes sujets d'évaluations par compétences</a></li>
+            <li><a href="#">{{_ "classes"}}</a></li>
+            <li><a href="#">{{_ "salles"}}</a></li>
+            <li><a href="#">{{_ "sujets"}}</a></li>
             <li class="divider"></li>
-            <li><a href="#">Mes informations personnelles</a></li>
-            <li><a href="#"> Mes établissements</a></li>
+            <li><a href="#">{{_ "info_perso"}}</a></li>
+            <li><a href="{{pathFor 'schoolPage'}}"> {{_ "etablissements"}}</a></li>
           </ul>
         </li>
         <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Mes applications <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> {{_ "applications"}} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Mes plans de classes</a></li>
-            <li><a href="#">Mes appréciations trimestrielles</a></li>
-            <li><a href="#">Mes évaluations par compétences</a></li>
+            <li><a href="#">{{_ "pdc"}}</a></li>
+            <li><a href="#">{{_ "appreciations"}}</a></li>
+            <li><a href="#">{{_ "eval"}}</a></li>
           </ul>
         </li>
-        <li><a href="#">Aide</a></li>
+        <li><a href="#">{{_ "aide"}}</a></li>
+        <!-- Todo : mettre la liste des schools du teacher -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> salle active <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">salle 1</a></li>
+            <li><a href="#">salle 2</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>

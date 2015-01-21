@@ -1,0 +1,13 @@
+{ "hello": "Bonjour",
+"donnees": "Mes données",
+"classes": "Mes classes",
+"salles": "Mes salles",
+"sujets": "Mes sujets d'évaluations par compétences",
+"info_perso": "Mes informations personnelles",
+"etablissements": "Mes établissements",
+"applications": "Mes applications",
+"pdc": "Mes plans de classes",
+"appreciations": "Mes appréciations trimestrielles",
+"eval": "Mes évaluations par compétences",
+"aide": "Aide"
+}
