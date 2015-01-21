@@ -1,15 +1,22 @@
 Meteor.subscribe("schools");
 
 
- Template.openCreateEtabPopin.events = {
-        "click .open-modal" : function(e,t) {
+ Template.openCreateEtabForm.events = {
+        "click #openCreateEtabForm" : function(e,t) {
         	e.preventDefault();
-        	$("#createEtabPopin").modal("show");
+        	
+        	$(".createEtab").removeClass('hide');
+        	$("#openCreateEtabForm").addClass('hide');
+        },"click #closeCreateEtabForm" : function(e,t) {
+        	e.preventDefault();
+        	
+        	$(".createEtab").addClass('hide');
+    		$("#openCreateEtabForm").removeClass('hide');
         }
 };
 
 
- Template.createEtabPopin.events = {
+ Template.createEtabForm.events = {
  	"submit form": function(e) {
     		e.preventDefault();
 
@@ -20,7 +27,8 @@ Meteor.subscribe("schools");
 
     		school._id = Schools.insert(school);
 
-    		console.log("school " + JSON.stringify(school));
+    		$(".createEtab").addClass('hide');
+    		$("#openCreateEtabForm").removeClass('hide');
 
     		Router.go('schoolPage', school);
   		}

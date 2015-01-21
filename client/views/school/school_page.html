@@ -1,39 +1,31 @@
 <template name="schoolPage">
 	{{> schoolItem}}
 
-	{{> openCreateEtabPopin}}
-	{{> createEtabPopin}}
+	{{> openCreateEtabForm}}
+	{{> createEtabForm}}
 </template>
 
 
-<template name="createEtabPopin">
-  <div class="modal fade in" id="createEtabPopin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Créer un établissement</h4>
-
+<template name="createEtabForm">
+  <div class="hide createEtab" id="createEtabForm">
+    
           <form class="main">
-    		<div class="control-group">
-        		<label class="control-label" for="nom">Nom</label>
-        		<div class="controls">
-            		<input name="nom" type="text" value="" placeholder="Le nom de votre établissement"/>
-        		</div>
-    		</div>
-    		<div class="control-group">
-        		<div class="controls">
-            		<input type="submit" value="Submit" class="btn btn-primary"/>
-        		</div>
-    		</div>
+    		<div class="row">
+  				<div class="col-lg-6">
+   					 <div class="input-group">
+      					
+      					<input type="text" name="nom" class="form-control" placeholder="Nom de l'établissement">
+      					<span class="input-group-btn">
+        					<button class="btn btn-default" type="Submit">Ajouter</button>
+      					</span>
+    				</div>
+  				</div>
+			</div>
     	  </form>
-
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
-<template name="openCreateEtabPopin">
- <input type="button" class="open-modal" value="Ajouter Etablissement" />
+<template name="openCreateEtabForm">
+ <span class="glyphicon glyphicon-plus-sign" id="openCreateEtabForm"></span>
+ <span class="hide createEtab glyphicon glyphicon-remove-sign" id="closeCreateEtabForm"></span>
 </template>
