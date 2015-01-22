@@ -1,37 +1,11 @@
 <template name="homePage">
-	<div class="container-fluid">
-		<div class="col-sm-12">
-			<div class="row">
-
-				<aside class="hidden-xs col-sm-4 part">
-					<div class="row">
-						<div class="col-sm-12">
-						<h3> {{_ "infos"}}</h3>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-sm-12">
-							<p> {{_ "infos_details"}}</p>
-						</div>
-					</div>
-				</aside>
-				<div class="col-sm-offset-1 col-sm-7 col-xs-12 part">
-					<div class="row">
-						<div class="col-sm-12">
-						<h3> {{_ "decouverte"}}</h3>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-sm-12">
-							<p> {{_ "decouverte_details"}}</p>
-						</div>
-					</div>
-				</div>
-				
-
-			</div>
+	<div class="container-fluid home-page">
+		<div class="row bigtitle">
+		</div>
+		<div class="row">
+		<h1>
+			{{_ "big_titre"}}
+		</h1>
 		</div>
 	</div>
-
-	<a class="brand" href="{{pathFor 'schoolPage' _id=lastSchool._id}}">Gérez mes établissements</a>
 </template>
