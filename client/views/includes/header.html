@@ -38,10 +38,14 @@
         <li><a href="#">{{_ "aide"}}</a></li>
         <!-- Todo : mettre la liste des schools du teacher -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> school active <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> 
+            {{school}}
+            <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">school 1</a></li>
-            <li><a href="#">school 2</a></li>
+            {{#each allSchools}}
+              <li><a href="{{pathFor 'schoolPage' _id=_id}}">{{school}}</a></li>
+            {{/each}}
+            <li>{{>school_creation}}</li>
           </ul>
         </li>
       </ul>
