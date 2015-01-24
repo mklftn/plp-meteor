@@ -1,27 +1,7 @@
 <template name="homePage">
 	{{#if currentUser}}
+	{{>home_page_currentUser}}
 	{{else}}
-	<div class="container-fluid home-page">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 bigtitle">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<h1 class="text-center subBigTitle">
-					{{_ "big_titre"}}
-				</h1>
-			</div>
-		</div>
-		<div class="row">
-			<div>
-				<div class="col-md-4 col-md-offset-4">
-					<h1 class="text-center subBigTitle2">
-						{{_ "decouvrir"}}
-					</h1>
-				</div>
-			</div>
-		</div>
-	</div>
+	{{>home_page_visitor}}
 	{{/if}}
 </template>

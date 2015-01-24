@@ -4,6 +4,12 @@ Template.header.helpers({
      }
 });
 
+Template.home_page_currentUser.helpers({
+     allSchools : function() {
+      return Schools.find({"_id" : {"$not" : this._id} });
+     }
+});
+
 
 Template.school_creation.events = {
  	"submit form": function(e) {

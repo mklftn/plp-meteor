@@ -1,21 +1,5 @@
 Meteor.subscribe("schools");
 
-
- Template.openCreateEtabForm.events = {
-        "click #openCreateEtabForm" : function(e,t) {
-        	e.preventDefault();
-        	
-        	$(".createEtab").removeClass('hide');
-        	$("#openCreateEtabForm").addClass('hide');
-        },"click #closeCreateEtabForm" : function(e,t) {
-        	e.preventDefault();
-        	
-        	$(".createEtab").addClass('hide');
-    		$("#openCreateEtabForm").removeClass('hide');
-        }
-};
-
-
  Template.createEtabForm.events = {
  	"submit form": function(e) {
     		e.preventDefault();
