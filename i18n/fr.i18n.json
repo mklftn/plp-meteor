@@ -13,5 +13,7 @@
 "big_titre": "Des outils pédagogiques pensés par des profs, pour des profs, réalisés par des informaticiens",
 "decouvrir": "Découvrir",
 "nom_ecole" : "Nom de l'école",
-"nom_classe" : "Nom de la classe"
+"nom_classe" : "Nom de la classe",
+"nom_eleve" : "Nom de l'élève",
+"prenom_eleve" : "Prénom de l'élève"
 }

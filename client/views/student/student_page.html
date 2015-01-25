@@ -1,20 +1,38 @@
 <template name="studentPage">
 	
+	<span>
 
-	<div class="btn-group-vertical" role="group">
-		{{#each displayedGroups}}
-			{{#if selected}}
-				<a href="#" role="button" class="list-group-item group-name selected">{{this.groupName}}</a>
-			{{else}}
-				<a href="#" role="button" class="list-group-item group-name">{{this.groupName}}</a>
-			{{/if}}
-		{{/each}}
-	</div>
+		<div class="btn-group-vertical" role="group">
+			{{#each displayedGroups}}
+				{{#if selected}}
+					<a href="#" role="button" class="list-group-item group-name selected">{{groupName}}</a>
+				{{else}}
+					<a href="#" role="button" class="list-group-item group-name">{{groupName}}</a>
+				{{/if}}
+			{{/each}}
+
+			{{>groupCreation}}
+		</div>
+
+		<div>
+			<ul class="list-group">
+				{{#each displayedStudents}}
+					<li class="list-group-item">
+						{{prenom}} {{nom}}	
+					</li>
+				{{/each}}
+			</ul>
+			
+
+			{{>studentCreation}}
+		</div>
+
+	</span>
 
 
 
 
-	{{>groupCreation}}
+	
 
 
 
