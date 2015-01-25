@@ -21,10 +21,7 @@ Template.school_creation.events = {
     		}
 
     		school._id = Schools.insert(school);
-
-    		$(".createEtab").addClass('hide');
-    		$("#openCreateEtabForm").removeClass('hide');
-
+    	
     		Router.go('schoolPage', school);
   		}
 };

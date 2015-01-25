@@ -11,5 +11,7 @@
 "eval": "Mes évaluations par compétences",
 "aide": "Aide",
 "big_titre": "Des outils pédagogiques pensés par des profs, pour des profs, réalisés par des informaticiens",
-"decouvrir": "Découvrir"
+"decouvrir": "Découvrir",
+"nom_ecole" : "Nom de l'école",
+"nom_classe" : "Nom de la classe"
 }
