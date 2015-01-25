@@ -1,14 +1,20 @@
 <template name="studentPage">
 	
 
-	<ul>
-		{{#each groups}}
-			<li>{{this}}</li>
+	<div class="btn-group-vertical" role="group">
+		{{#each displayedGroups}}
+			{{#if selected}}
+				<a href="#" role="button" class="list-group-item group-name selected">{{this.groupName}}</a>
+			{{else}}
+				<a href="#" role="button" class="list-group-item group-name">{{this.groupName}}</a>
+			{{/if}}
 		{{/each}}
-		<li>
-			{{>groupCreation}}
-		</li>
-	</ul>
+	</div>
+
+
+
+
+	{{>groupCreation}}
 
 
 
