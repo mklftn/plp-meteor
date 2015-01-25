@@ -2,6 +2,8 @@
 @gris_plp: #E4E7E9;
 @bleu_plp: #0C5AA6;
 @vert_plp: #23CC23;
+@vertclair_plp: #73E56E;
+@height_carre: 120px;
 
 
 
@@ -29,6 +31,40 @@
 	font-size: 2.3em;
 	line-height: 1.3em;
 	border: solid 2px @vert_plp;
+}
+
+.carre{
+	background-color: @gris_plp;
+	height: @height_carre;
+	padding: 10px;
+}
+
+.link:hover{
+	text-decoration: none;
+}
+
+.carre:hover{
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+.carre_titre{
+	color: @bleu_plp;
+	text-align: center;
+	font-size: 18px;
+}
+
+.carre_info{
+	background-color: @vertclair_plp;
+	height: @height_carre;
+}
+
+.row2{
+	padding-top: 30px;
+}
+
+.no-padding-left{
+	padding-left: 0px;
 }
 
 .subBigTitle2:hover{

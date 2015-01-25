@@ -1,0 +1,93 @@
+<template name="accueil">
+  {{> schoolItem}}
+  <div class="container-fluid">
+    <div class="col-md-4 no-padding-left">
+      <h3>{{_ "donnees"}}</h3>
+    </div>
+    <div class="col-md-7 col-md-offset-1">
+      <h3>{{_ "applications"}}</h3>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <a href="{{pathFor 'studentPage' _id=_id}}" class="link">
+          <div class="carre">
+            <h4 class="carre_titre">{{_ "classes"}}</h4>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-2">
+        <div class="carre">
+          <h4 class="carre_titre">{{_ "salles"}}</h4>
+        </div>
+      </div>    
+      <div class="col-md-2 col-md-offset-1">
+        <div class="carre">
+          <h4 class="carre_titre">{{_ "pdc"}}</h4>
+        </div>
+      </div>     
+      <div class="col-md-2">
+        <div class="carre">
+          <h4 class="carre_titre">{{_ "appreciations_court"}}</h4>
+        </div>
+      </div>     
+      <div class="col-md-2">
+        <div class="carre">
+          <h4 class="carre_titre">{{_ "eval_court"}}</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="row row2">
+      <div class="col-md-2">
+        <div class="carre">
+          <h4 class="carre_titre">{{_ "sujets_court"}}</h4>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="carre">
+        </div>
+      </div>
+      <div class="col-md-1">
+        <div class="col-md-6 sep">
+        </div>
+      </div>     
+      <div class="col-md-2">
+        <div class="carre">
+        </div>
+      </div>     
+      <div class="col-md-2">
+        <div class="carre">
+        </div>
+      </div>     
+      <div class="col-md-2">
+        <div class="carre">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 no-padding-left">
+      <h3>{{_ "general"}}</h3>
+    </div>
+    <div class="col-md-7 col-md-offset-1">
+      <h3>{{_ "infos"}}</h3>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="carre">
+          <h4 class="carre_titre">{{_ "info_perso_court"}}</h4>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="carre">
+          <h4 class="carre_titre">{{_ "etablissements"}}</h4>
+        </div>
+      </div>    
+      <div class="col-md-6 col-md-offset-1">
+        <div class="carre_info">
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

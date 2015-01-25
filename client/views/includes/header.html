@@ -23,7 +23,7 @@
             <li><a href="#">{{_ "sujets"}}</a></li>
             <li class="divider"></li>
             <li><a href="#">{{_ "info_perso"}}</a></li>
-            <li><a href="{{pathFor 'schoolPage'}}"> {{_ "etablissements"}}</a></li>
+            <li><a href="#"> {{_ "etablissements"}}</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -34,7 +34,7 @@
             <li><a href="#">{{_ "eval"}}</a></li>
           </ul>
         </li>
-        <li><a href="#">{{_ "aide"}}</a></li>
+        <li><a href="{{pathFor 'accueil'}}">{{_ "accueil"}}</a></li>
         <!-- Todo : mettre la liste des schools du teacher -->
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> 
@@ -42,7 +42,7 @@
             <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             {{#each allSchools}}
-              <li><a href="{{pathFor 'schoolPage' _id=_id}}">{{school}}</a></li>
+              <li><a href="{{pathFor 'accueil' _id=_id}}">{{school}}</a></li>
             {{/each}}
             <li>{{>school_creation}}</li>
           </ul>
