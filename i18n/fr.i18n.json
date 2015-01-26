@@ -22,5 +22,6 @@
 "prenom_eleve" : "Prénom de l'élève",
 "school_active" : "Etablissement : ",
 "general" : "Données générales",
-"infos": "Nouveautés et informations"
+"infos": "Nouveautés et informations",
+"nom_salle" : "Nom de la salle"
 }
