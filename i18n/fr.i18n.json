@@ -23,5 +23,7 @@
 "school_active" : "Etablissement : ",
 "general" : "Données générales",
 "infos": "Nouveautés et informations",
-"nom_salle" : "Nom de la salle"
+"nom_salle" : "Nom de la salle",
+"salle_select" : "Salle sélectionnée :",
+"nb_lignes" : "Nombres de lignes :"
 }

@@ -1,4 +1,41 @@
 <template name="roomPage">
-<p>fuck</p>
-{{>roomCreation}}
+	<div class="row">
+		<div class="col-md-6">
+			<div class="col-md-6 selectzone">
+				<h3>{{_ "salle_select"}}</h3>
+			</div>
+			<div class="col-md-6">
+				<div class="btn-group bouton">
+					<button class="btn dropdown-toggle btn-lg" data-hover="dropdown" data-toggle="dropdown">
+						{{selectedRoom}}
+						<b class="caret"></b>
+					</button>
+					<ul class="dropdown-menu">
+						{{#each displayedRooms}}
+						<li><a class="room-item">{{this.roomName}}</a></li>
+						{{/each}}
+						<li>{{>roomCreation}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="col-md-6 selectzone">
+				<h4>{{_ "nb_lignes"}}</h4>
+			</div>
+			<div class="col-md-6">
+				<div class="btn-group bouton">
+					<button id="nbLignes" class="btn dropdown-toggle btn-lg" data-hover="dropdown" data-toggle="dropdown">
+						{{nbRow}}
+						<b class="caret"></b>
+					</button>
+					<ul class="dropdown-menu">
+						{{#each displayedLignes}}
+						<li><a class="nbRow">{{this.nbLignes}}</a></li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
