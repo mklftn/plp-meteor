@@ -9,7 +9,7 @@ Template.roomPage.helpers({
                     idSchool : this._id,
                     selected : this.rooms[i] === this.selectedRooms
                }
-              result.push(item);
+               result.push(item);
           }    
           return result;
      },
@@ -28,10 +28,15 @@ Template.roomPage.helpers({
 Template.roomPage.events({
      "click .room-item" : function(e) {
           $('#nbLignes').text(this.nbLignes);
+          $('#lignes').val(this.nbLignes);
           Meteor.call("updateSelectedRoom", this.idSchool, this.roomName);
      },
-     "click .nbRow" : function(e) {
-          alert(this.nbLignes);
+     "change #lignes" : function(e){
+          e.preventDefault();
+          var nomSalle = $("#roomActive").text();
+          var nbRow = $("#lignes option:selected").val();
+          var idSchool = this._id;
+          Meteor.call("updateRowRoom", idSchool, nomSalle, nbRow);
      }
 });
 
@@ -42,7 +47,7 @@ Template.roomCreation.events = {
 
 		var nomSalle = $(e.target).find('[name=nomSalle]').val();
 
-		Schools.update({"_id" : this._id}, { "$addToSet": { "rooms" : {"nom" : nomSalle, "taille" : {"lignes" : 6, "colonnes" : 5}}}} );
+          Schools.update({"_id" : this._id}, { "$addToSet": { "rooms" : {"nom" : nomSalle, "taille" : {"lignes" : 6, "colonnes" : 5}}}} );
 
-	}
+     }
 }; 
