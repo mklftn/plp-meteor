@@ -13,7 +13,7 @@ Template.home_page_currentUser.helpers({
 
 Template.school_creation.events = {
  	"submit form": function(e) {
-    		e.preventDefault();
+    		e.defaultPrevented;
 
     		var school = {
       			user: Meteor.userId(),
@@ -22,6 +22,6 @@ Template.school_creation.events = {
 
     		school._id = Schools.insert(school);
     	
-    		Router.go('schoolPage', school);
+    		Router.go('accueil', school);
   		}
 };
