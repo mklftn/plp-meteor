@@ -20,33 +20,34 @@
 			</div>
 		</div>
 		<div class="col-md-3">
-			<div class="col-md-6 selectzone">
-				<h4>{{_ "nb_lignes"}}</h4>
-			</div>
-			<div class="col-md-6">
-				<div class="btn-group bouton">
-					<button id="nbLignes" class="btn dropdown-toggle btn-lg" data-hover="dropdown" data-toggle="dropdown">
-						{{nbRow}}
-						<b class="caret"></b>
-					</button>
-					<ul class="dropdown-menu">
-						{{#each displayedLignes}}
-						<li><a class="nbRow">{{this.nbLignes}}</a></li>
-						{{/each}}
-					</ul>
-				</div>
-			</div>
+
 		</div>
 	</div>
 	<div>
 		<form role="form" class="form-horizontal">
 			<fieldset>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Select:</label>
+					<label class="col-sm-2 control-label">Row:</label>
 					<div class="col-sm-3">
 						<select class="form-control" id="lignes">
 							{{#each displayedLignes}}
 							<option value="{{this.nbLignes}}">{{this.nbLignes}}</option>
+							{{/each}}
+						</select>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+		<div>
+		<form role="form" class="form-horizontal">
+			<fieldset>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Col:</label>
+					<div class="col-sm-3">
+						<select class="form-control" id="colonnes">
+							{{#each displayedColonnes}}
+							<option value="{{this.nbColonnes}}">{{this.nbColonnes}}</option>
 							{{/each}}
 						</select>
 					</div>
