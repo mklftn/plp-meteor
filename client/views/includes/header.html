@@ -15,6 +15,7 @@
 
       {{#if currentUser}}
       <ul class="nav navbar-nav navbar-right">
+       {{#if school}}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> {{_ "donnees"}} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -34,6 +35,7 @@
             <li><a href="#">{{_ "eval"}}</a></li>
           </ul>
         </li>
+        {{/if}}
         <li><a href="{{pathFor 'accueil'}}">{{_ "accueil"}}</a></li>
         <!-- Todo : mettre la liste des schools du teacher -->
         <li class="dropdown">

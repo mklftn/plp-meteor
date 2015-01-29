@@ -18,7 +18,9 @@
 			<ul class="list-group">
 				{{#each displayedStudents}}
 					<li class="list-group-item">
-						{{prenom}} {{nom}}	
+						{{prenom}} {{nom}}	{{index}}
+						<span class="glyphicon glyphicon-pencil openStudentModification"></span>
+						{{>studentModification nomEleve=nom prenomEleve=prenom idSchool=idSchool}}
 					</li>
 				{{/each}}
 			</ul>
