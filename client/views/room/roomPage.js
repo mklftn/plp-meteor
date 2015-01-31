@@ -69,15 +69,3 @@ Template.roomPage.events({
           Meteor.call("updateColRoom", idSchool, nomSalle, nbCol);
      }
 });
-
-Template.roomCreation.events = {
-	"submit form": function(e) {
-
-		e.preventDefault();
-
-		var nomSalle = $(e.target).find('[name=nomSalle]').val();
-
-          Schools.update({"_id" : this._id}, { "$addToSet": { "rooms" : {"nom" : nomSalle, "taille" : {"lignes" : 6, "colonnes" : 5}}}} );
-
-     }
-}; 
