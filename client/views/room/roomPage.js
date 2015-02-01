@@ -1,6 +1,7 @@
 Template.roomPage.rendered = function () {
      var nbRow = Session.get("roomRow");
      var nbCol = Session.get("roomCol");
+     var positions = Session.get("positions");
      $('#lignes').val(nbRow);
      $('#colonnes').val(nbCol);
 };
@@ -13,6 +14,7 @@ Template.roomPage.helpers({
                     roomName : this.rooms[i].nom,
                     nbLignes : this.rooms[i].taille.lignes,
                     nbColonnes : this.rooms[i].taille.colonnes,
+                    positions : this.rooms[i].positions,
                     idSchool : this._id,
                     selected : this.rooms[i] === this.selectedRooms
                }
@@ -50,6 +52,7 @@ Template.roomPage.events({
           Session.set("roomName", this.roomName);
           Session.set("roomRow", this.nbLignes);
           Session.set("roomCol", this.nbColonnes);
+          Session.set("positions", this.positions);
           Meteor.call("updateSelectedRoom", this.idSchool, this.roomName);
      },
      "change #lignes" : function(e){
