@@ -54,6 +54,8 @@ Template.groupCreation.events = {
 
             Meteor.call("createGroup", this._id, nomClasse);
 
+            return false;
+
   		}
 };
 
@@ -67,6 +69,8 @@ Template.studentCreation.events = {
     		var prenom = $(e.target).find('[name=prenom]').val();
       			
             Meteor.call("createStudent", this._id, this.selectedGroup, nom, prenom);
+
+            return false;
   		}
 };
 
@@ -82,6 +86,8 @@ Template.studentModification.events = {
         Meteor.call("modifyStudentName", this.idSchool, this.nomEleve, this.prenomEleve, nom, prenom);
 
         $(".studentModification").addClass("hide");
+
+        return false;
     }
 
 

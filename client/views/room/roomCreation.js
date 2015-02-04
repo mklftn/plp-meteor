@@ -10,5 +10,7 @@ Template.roomCreation.events = {
 
 		Meteor.call("createRoom", idSchool, nomSalle, nbRow, nbCol);
 		Meteor.call("createDefaultSeats", idSchool, nomSalle, nbRow, nbCol);
+
+		return false;
 	}
 }; 
