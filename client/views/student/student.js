@@ -40,7 +40,20 @@ Template.studentPage.events({
 		Meteor.call("updateSelectedGroup", this.idSchool, this.groupName);
 	}, 
     "click .openStudentModification" : function(e){
-        $(".studentModification").removeClass("hide");
+
+        $(".studentModification").addClass("hide");
+        $(".openStudentModification").removeClass("hide");
+        $(".closeStudentModification").addClass("hide");
+
+        $("#iconModifStudent"+this.index).addClass("hide");
+        $("#iconCancelModifStudent"+this.index).removeClass("hide");
+        $("#studentModif"+this.index).removeClass("hide");
+    },
+    "click .closeStudentModification" : function(e){
+
+        $("#iconModifStudent"+this.index).removeClass("hide");
+        $("#iconCancelModifStudent"+this.index).addClass("hide");
+        $("#studentModif"+this.index).addClass("hide");
     }
 });
 
