@@ -1,10 +1,3 @@
-Template.roomPage.rendered = function () {
-     var nbRow = Session.get("roomRow");
-     var nbCol = Session.get("roomCol");
-     var positions = Session.get("positions");
-     $('#lignes').val(nbRow);
-     $('#colonnes').val(nbCol);
-};
 
 Template.roomPage.helpers({
      displayedRooms: function () {
@@ -12,11 +5,8 @@ Template.roomPage.helpers({
           for(var i=0; i<this.rooms.length; i++){
                var item = {
                     roomName : this.rooms[i].nom,
-                    nbLignes : this.rooms[i].taille.lignes,
-                    nbColonnes : this.rooms[i].taille.colonnes,
-                    positions : this.rooms[i].positions,
                     idSchool : this._id,
-                    selected : this.rooms[i] === this.selectedRooms
+                    selected : this.rooms[i].nom === this.selectedRooms
                }
                result.push(item);
           }    
@@ -24,9 +14,18 @@ Template.roomPage.helpers({
      },
      displayedLignes: function () {
           var result = new Array();
+
+          var nbLigne = 1;
+           for(var i=0; i<this.rooms.length; i++){
+               if(this.rooms[i].nom === this.selectedRoom){
+                    nbLigne = this.rooms[i].taille.lignes;
+               }
+          }   
+
           for(var i=1; i<10; i++){
                var item = {
-                    nbLignes : i
+                    nbLignes : i,
+                    selected : nbLigne === i 
                }
                result.push(item);
           }
@@ -34,9 +33,18 @@ Template.roomPage.helpers({
      },
      displayedColonnes: function () {
           var result = new Array();
+
+          var nbColonne = 1;
+           for(var i=0; i<this.rooms.length; i++){
+               if(this.rooms[i].nom === this.selectedRoom){
+                    nbColonne = this.rooms[i].taille.colonnes;
+               }
+          }    
+
           for(var i=1; i<10; i++){
                var item = {
-                    nbColonnes : i
+                    nbColonnes : i,
+                    selected : nbColonne === i
                }
                result.push(item);
           }
@@ -46,13 +54,6 @@ Template.roomPage.helpers({
 
 Template.roomPage.events({
      "click .room-item" : function(e) {
-          $('#nbLignes').text(this.nbLignes);
-          $('#lignes').val(this.nbLignes);
-          $('#colonnes').val(this.nbColonnes);
-          Session.set("roomName", this.roomName);
-          Session.set("roomRow", this.nbLignes);
-          Session.set("roomCol", this.nbColonnes);
-          Session.set("positions", this.positions);
           Meteor.call("updateSelectedRoom", this.idSchool, this.roomName);
      },
      "change #lignes" : function(e){

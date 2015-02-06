@@ -31,7 +31,12 @@
 					<div class="col-sm-3">
 						<select class="form-control" id="lignes">
 							{{#each displayedLignes}}
-							<option value="{{this.nbLignes}}">{{this.nbLignes}}</option>
+							{{#if selected}}
+								<option value="{{this.nbLignes}}" selected="selected">{{this.nbLignes}} {{selected}}</option>
+							{{else}}
+								<option value="{{this.nbLignes}}">{{this.nbLignes}} {{selected}}</option>
+							{{/if}}
+							
 							{{/each}}
 						</select>
 					</div>
@@ -47,7 +52,13 @@
 					<div class="col-sm-3">
 						<select class="form-control" id="colonnes">
 							{{#each displayedColonnes}}
-							<option value="{{this.nbColonnes}}">{{this.nbColonnes}}</option>
+
+							{{#if selected}}
+								<option value="{{this.nbColonnes}}" selected="selected">{{this.nbColonnes}} {{selected}}</option>
+							{{else}}
+								<option value="{{this.nbColonnes}}">{{this.nbColonnes}} {{selected}}</option>
+							{{/if}}
+		
 							{{/each}}
 						</select>
 					</div>
