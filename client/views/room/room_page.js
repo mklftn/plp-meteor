@@ -6,7 +6,7 @@ Template.roomPage.helpers({
                var item = {
                     roomName : this.rooms[i].nom,
                     idSchool : this._id,
-                    selected : this.rooms[i].nom === this.selectedRooms
+                    selected : this.rooms[i].nom === this.selectedRoom
                }
                result.push(item);
           }    
@@ -20,12 +20,13 @@ Template.roomPage.helpers({
                if(this.rooms[i].nom === this.selectedRoom){
                     nbLigne = this.rooms[i].taille.lignes;
                }
-          }   
+          }
 
           for(var i=1; i<10; i++){
+               var selection = (nbLigne == i ? 'selected' : '');
                var item = {
                     nbLignes : i,
-                    selected : nbLigne === i 
+                    selected : selection
                }
                result.push(item);
           }
@@ -42,9 +43,10 @@ Template.roomPage.helpers({
           }    
 
           for(var i=1; i<10; i++){
+               var selection = (nbColonne == i ? 'selected' : '');
                var item = {
                     nbColonnes : i,
-                    selected : nbColonne === i
+                    selected : selection
                }
                result.push(item);
           }
@@ -61,7 +63,6 @@ Template.roomPage.events({
           var nomSalle = $("#roomActive").text();
           var nbRow = $("#lignes option:selected").val();
           var idSchool = this._id;
-          Session.set("roomRow", nbRow);
           Meteor.call("updateRowRoom", idSchool, nomSalle, nbRow);
      },
      "change #colonnes" : function(e){
@@ -69,7 +70,6 @@ Template.roomPage.events({
           var nomSalle = $("#roomActive").text();
           var nbCol = $("#colonnes option:selected").val();
           var idSchool = this._id;
-          Session.set("roomCol", nbCol);
           Meteor.call("updateColRoom", idSchool, nomSalle, nbCol);
      }
 });

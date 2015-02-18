@@ -32,9 +32,9 @@
 						<select class="form-control" id="lignes">
 							{{#each displayedLignes}}
 							{{#if selected}}
-								<option value="{{this.nbLignes}}" selected="selected">{{this.nbLignes}} {{selected}}</option>
+								<option value="{{this.nbLignes}}" selected="selected">{{this.nbLignes}}</option>
 							{{else}}
-								<option value="{{this.nbLignes}}">{{this.nbLignes}} {{selected}}</option>
+								<option value="{{this.nbLignes}}">{{this.nbLignes}}</option>
 							{{/if}}
 							
 							{{/each}}
@@ -52,11 +52,10 @@
 					<div class="col-sm-3">
 						<select class="form-control" id="colonnes">
 							{{#each displayedColonnes}}
-
 							{{#if selected}}
-								<option value="{{this.nbColonnes}}" selected="selected">{{this.nbColonnes}} {{selected}}</option>
+								<option value="{{this.nbColonnes}}" selected="selected">{{this.nbColonnes}}</option>
 							{{else}}
-								<option value="{{this.nbColonnes}}">{{this.nbColonnes}} {{selected}}</option>
+								<option value="{{this.nbColonnes}}">{{this.nbColonnes}}</option>
 							{{/if}}
 		
 							{{/each}}
