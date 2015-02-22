@@ -1,14 +1,40 @@
+/* Déclaration des variables*/
+@gris_fonce: #A0A0A0;
+@gris_fonceplus: #828282;
+@gris_clair: #E7E7E7;
+@gris_clairmoins: #F1F1F1;
+
+.desk{
+	padding-top: 20px;
+	font-size: 22px;
+	text-align:center; 
+    vertical-align:middle;
+}
+
+.deskText{
+	border: solid 3px black;
+	background-color: @gris_clair;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 .cel{
-	width: 40px;
+	width: 80px;
 	height: 40px;
 	margin: 4px;
+	cursor:  pointer;
 }
+
 
 /* tableau visible, invisible */
 [data-seatactivity="active"] {
-	background-color: red;
+	background-color: @gris_fonce;
+	border: solid 3px @gris_fonceplus;
 }
 
 [data-seatactivity="inactive"] {
-	background-color: blue;
+	background-color: @gris_clair;
+	border: solid 3px @gris_clairmoins;
 }

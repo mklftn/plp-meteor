@@ -1,7 +1,16 @@
 <template name="roomVision">
 	<table class="tableSeat">
-	{{#each roomView.lignes}}
+		{{#each roomView.lignes}}
 		<tr>{{> visionLigne}}</tr>
-	{{/each}}
+		{{/each}}
+		<th colspan="{{roomView.nbTd}}" class="desk">
+			<div class="deskText">
+				{{#if roomView.bigTitle}}
+				{{_ "bureau_prof"}}
+				{{else}}
+				{{_ "bureau_prof_petit"}}
+				{{/if}}
+			</div>
+		</th>
 	</table>
 </template>

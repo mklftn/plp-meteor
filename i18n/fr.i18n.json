@@ -24,6 +24,9 @@
 "general" : "Données générales",
 "infos": "Nouveautés et informations",
 "nom_salle" : "Nom de la salle",
-"salle_select" : "Salle sélectionnée :",
-"nb_lignes" : "Nombres de lignes :"
+"salle_select" : "Salle",
+"nb_lignes" : "Nombre de lignes",
+"nb_colonnes" : "Nombre de colonnes",
+"bureau_prof" : "Bureau du professeur",
+"bureau_prof_petit" : "Bureau"
 }

@@ -35,6 +35,7 @@ Template.roomVision.helpers({
                     var l = k +1;
                     var place = (j * 10) + l;
                     var seatActivity = new String();
+                    var mess = new String();
                     if(jQuery.inArray(place, positions)!==-1){
                          seatAct = "active";
                     } else{
@@ -57,9 +58,16 @@ Template.roomVision.helpers({
                }
                intLignes.push(lig);
           }
-
+          var grandTitre = new Boolean();
+          if(nbColonne > 4){
+               grandTitre = true;
+          } else{
+               grandTitre = false;
+          }
           var roomInfo = {
-               lignes: intLignes
+               lignes: intLignes,
+               nbTd: nbColonne,
+               bigTitle: grandTitre
           }
           return roomInfo;
      }
