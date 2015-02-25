@@ -1,0 +1,19 @@
+<template name="roomSelect">
+	<div class="row">
+		<h3>{{_ "salle_select"}}</h3>
+	</div>
+	<div class="row espace_dessous">
+		<li class="dropdown sansPuce">
+			<button class="btn dropdown-toggle btn-lg btn-default active btn-block" data-hover="dropdown" data-toggle="dropdown">
+				<a id="roomActive">{{selectedRoom}}</a>
+				<b class="caret"></b>
+			</button>
+			<ul class="dropdown-menu">
+				{{#each displayedRooms}}
+				<li><a class="room-item">{{this.roomName}}</a></li>
+				{{/each}}
+				<li>{{>roomCreation}}</li>
+			</ul>
+		</li>
+	</div>
+</template>

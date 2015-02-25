@@ -1,6 +1,7 @@
 Template.roomVision.events({
 // Modifie suite a un click le statut seatactivity d'une place : active or inactive  
 "click .cel" : function(e) {
+     e.defaultPrevented;
      var idSchool = this._id;
      var nomSalle = this.selectedRoom;
      var seatPosition = $(e.target).attr("data-numeroplace");
@@ -8,6 +9,7 @@ Template.roomVision.events({
           Meteor.call("supprimerSeat", idSchool, nomSalle, seatPosition);
      } else{
           Meteor.call("ajouterSeat", idSchool, nomSalle, seatPosition);
+          return false;
      };
 }
 });

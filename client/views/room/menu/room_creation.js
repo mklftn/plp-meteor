@@ -1,7 +1,7 @@
 Template.roomCreation.events = {
 	"submit form": function(e) {
 
-		e.preventDefault();
+		e.defaultPrevented;
 
 		var idSchool = this._id;
 		var nomSalle = $(e.target).find('[name=nomSalle]').val();
@@ -10,6 +10,7 @@ Template.roomCreation.events = {
 
 		Meteor.call("createRoom", idSchool, nomSalle, nbRow, nbCol);
 		Meteor.call("createDefaultSeats", idSchool, nomSalle, nbRow, nbCol);
+		Meteor.call("updateSelectedRoom", idSchool, nomSalle);
 
 		return false;
 	}

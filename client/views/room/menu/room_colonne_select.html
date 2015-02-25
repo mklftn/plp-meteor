@@ -1,0 +1,24 @@
+<template name="roomColonneSelect">
+	<div>
+		<form role="form" class="form-horizontal">
+			<fieldset>
+				<div id="colonne_select" class="form-group">
+					<label class="row control-label">{{_ "nb_colonnes"}}</label>
+					<div class="row">
+						<div class="col-md-5 no_padding_left">
+							<select class="form-control" id="colonnes">
+								{{#each displayedColonnes}}
+								{{#if selected}}
+								<option value="{{this.nbColonnes}}" selected="selected">{{this.nbColonnes}}</option>
+								{{else}}
+								<option value="{{this.nbColonnes}}">{{this.nbColonnes}}</option>
+								{{/if}}
+								{{/each}}
+							</select>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</template>
