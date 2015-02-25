@@ -21,6 +21,8 @@ Template.roomVision.helpers({
           var position = new Array();
           var id = this._id;
           var selectedR = this.selectedRoom;
+
+          // Récup du nb de lignes et de colonnes ainsi que des places occupées
           for(var i=0; i<this.rooms.length; i++){
                if(this.rooms[i].nom === this.selectedRoom){
                     nbColonne = this.rooms[i].taille.colonnes;
@@ -60,17 +62,23 @@ Template.roomVision.helpers({
                }
                intLignes.push(lig);
           }
-          var grandTitre = new Boolean();
+
+          //Objet renvoyé
+          var roomInfo = {
+               lignes: intLignes,
+               nbTd: nbColonne,
+               bigTitle: titre(nbColonne)
+          }
+          return roomInfo;
+     }
+});
+
+function titre(nbColonne){
+               var grandTitre = new Boolean();
           if(nbColonne > 4){
                grandTitre = true;
           } else{
                grandTitre = false;
           }
-          var roomInfo = {
-               lignes: intLignes,
-               nbTd: nbColonne,
-               bigTitle: grandTitre
-          }
-          return roomInfo;
-     }
-});
+          return grandTitre;
+}
