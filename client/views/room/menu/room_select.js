@@ -17,6 +17,7 @@ Template.roomSelect.events({
      "click .room-item" : function(e) {
           e.defaultPrevented;
           Meteor.call("updateSelectedRoom", this.idSchool, this.roomName);
+          $('[data-toggle="dropdown"]').parent().removeClass('open');
           return false;
      },
      "click #modifRoomName" : function(e) {

@@ -28,5 +28,12 @@
 "nb_lignes" : "Nombre de lignes",
 "nb_colonnes" : "Nombre de colonnes",
 "bureau_prof" : "Bureau du professeur",
-"bureau_prof_petit" : "Bureau"
+"bureau_prof_petit" : "Bureau",
+"salle_supp" : "Sélectionnez la salle que vous souhaitez supprimer :",
+"salle_supp_confirm1" :"Etes-vous sûr de vouloir supprimer la salle ",
+"salle_supp_confirm2" : "Si vous répondez oui, vous perdrez l'ensemble des données liées à cette salle.",
+"salle_supp_ok" : "Supprimer la salle ",
+"salle_supp_valid" : "Oui, j'en suis sûr",
+"salle_supp_novalid" : "Non, je garde cette salle",
+"revenir" : "Revenir à la page précédente"
 }
