@@ -7,14 +7,14 @@
 			<div class="col-md-11 no_padding_left no_padding_right">
 				<li class="dropdown sansPuce">
 					<button class="btn dropdown-toggle btn-lg btn-default active btn-block" data-hover="dropdown" data-toggle="dropdown">
-						<a id="roomActive">{{selectedRoom}}</a>
+						<a id="roomActive">{{school.selectedRoom}}</a>
 						<b class="caret"></b>
 					</button>
 					<ul class="dropdown-menu">
-						{{#each displayedRooms}}
+						{{#each displayedRooms school}}
 						<li><a class="room-item">{{this.roomName}}</a></li>
 						{{/each}}
-						<li>{{>roomCreation}}</li>
+						<li>{{>roomCreation school}}</li>
 					</ul>
 				</li>
 			</div>
@@ -24,7 +24,7 @@
 		</div>
 
 		<div id="changeNameRoom" class="hide input-group input-group-lg">
-			<input id="newName" data-oldName="{{selectedRoom}}" class="form-control" type="text" value="{{selectedRoom}}" aria-describedby="validNewRoomName"/>
+			<input id="newName" data-oldName="{{school.selectedRoom}}" class="form-control" type="text" value="{{school.selectedRoom}}" aria-describedby="validNewRoomName"/>
 			<span id="validNewRoomName" class="input-group-addon glyphicon glyphicon-ok">
 			</span>
 		</div>

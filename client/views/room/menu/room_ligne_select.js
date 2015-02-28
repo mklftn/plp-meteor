@@ -1,11 +1,11 @@
 Template.roomLigneSelect.helpers({
-     displayedLignes: function () {
+     displayedLignes: function (school) {
           var result = new Array();
 
           var nbLigne = 1;
-          for(var i=0; i<this.rooms.length; i++){
-               if(this.rooms[i].nom === this.selectedRoom){
-                    nbLigne = this.rooms[i].taille.lignes;
+          for(var i=0; i<school.rooms.length; i++){
+               if(school.rooms[i].nom === school.selectedRoom){
+                    nbLigne = school.rooms[i].taille.lignes;
                }
           }
 
@@ -27,7 +27,7 @@ Template.roomPage.events({
           var nomSalle = $("#roomActive").text();
           var nbRow = $("#lignes option:selected").val();
           var nbCol = $("#colonnes option:selected").val();
-          updateRowRoomAndSeat(this, nomSalle, nbRow, nbCol);
+          updateRowRoomAndSeat(this.school, nomSalle, nbRow, nbCol);
           return false;
      }
 });

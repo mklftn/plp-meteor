@@ -1,11 +1,11 @@
 Template.roomSelect.helpers({
-     displayedRooms: function () {
+     displayedRooms: function (school) {
           var result = new Array();
-          for(var i=0; i<this.rooms.length; i++){
+          for(var i=0; i<school.rooms.length; i++){
                var item = {
-                    roomName : this.rooms[i].nom,
-                    idSchool : this._id,
-                    selected : this.rooms[i].nom === this.selectedRoom
+                    roomName : school.rooms[i].nom,
+                    idSchool : school._id,
+                    selected : school.rooms[i].nom === school.selectedRoom
                }
                result.push(item);
           }    
@@ -28,13 +28,13 @@ Template.roomSelect.events({
      },
      "click #validNewRoomName" : function(e) {
           e.defaultPrevented;
-          validerRoomName(this._id);
+          validerRoomName(this.school._id);
           return false;
      },
      "keypress #newName" : function(e) {
           e.defaultPrevented;
           if(e.which == 13) {
-          validerRoomName(this._id);
+          validerRoomName(this.school._id);
           return false;
   }
 }

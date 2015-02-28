@@ -2,7 +2,6 @@ Template.roomCreation.events = {
 	"submit form": function(e) {
 
 		e.defaultPrevented;
-
 		var idSchool = this._id;
 		var nomSalle = $(e.target).find('[name=nomSalle]').val();
 		var nbRow = 5;
