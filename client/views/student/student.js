@@ -1,16 +1,21 @@
 Template.studentPage.helpers({
      displayedGroups: function () {
-     	var result = new Array();
-     	for(var i=0; i<this.groups.length; i++){
-     		var item = {
-     			groupName : this.groups[i],
-     			idSchool : this._id,
-     			selected : this.groups[i] === this.selectedGroup
-     		}
+    
+        var result = new Array();
 
-     		result.push(item);
+     	for(var i=0; i<this.groups.length; i++){
+     		
+            if(this.groups[i] != this.selectedGroup){
+                var item={
+                    groupName : this.groups[i],
+                    idSchool : this._id
+                }
+
+                result.push(item);
+            }
      	}  	
        return result;
+
      }, displayedStudents: function() {
 
      	var result = new Array();

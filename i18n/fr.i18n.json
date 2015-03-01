@@ -35,5 +35,7 @@
 "salle_supp_ok" : "Supprimer la salle ",
 "salle_supp_valid" : "Oui, j'en suis sûr",
 "salle_supp_novalid" : "Non, je garde cette salle",
-"revenir" : "Revenir à la page précédente"
+"revenir" : "Revenir à la page précédente",
+"nouvel_eleve" : "Ajouter un nouvel élève",
+"classe_selectionnee": "Classe Choisie"
 }

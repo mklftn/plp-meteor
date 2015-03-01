@@ -1,33 +1,41 @@
 <template name="studentPage">
 	
-	<span>
+	<div class="row espace_dessus">
 
-		<div class="btn-group-vertical" role="group">
-			{{#each displayedGroups}}
-				{{#if selected}}
-					<a href="#" role="button" class="list-group-item group-name selected">{{groupName}}</a>
-				{{else}}
-					<a href="#" role="button" class="list-group-item group-name">{{groupName}}</a>
-				{{/if}}
-			{{/each}}
-
-			{{>groupCreation}}
-		</div>
-
-		<div>
-			<ul class="list-group">
-				{{#each displayedStudents}}
-					<li class="list-group-item">
-						{{prenom}} {{nom}} {{genre}}
-						<span id="iconModifStudent{{index}}" class="glyphicon glyphicon-pencil openStudentModification"></span>
-						<span id="iconCancelModifStudent{{index}}" class="glyphicon glyphicon-eject hide closeStudentModification"></span>
-						{{>studentModification}}
+		<div class="col-md-4">
+			<div class="col-md-11 no_padding_left no_padding_right">
+				<div class="espace_dessous">
+				 <label class="row control-label">{{_ "classe_selectionnee"}}</label>
+					<li class="dropdown sansPuce">
+						<button class="btn dropdown-toggle btn-lg btn-default active btn-block" data-hover="dropdown" data-toggle="dropdown">
+							<a id="groupeActif" class="elementSelectionne">{{selectedGroup}}</a>
+							<b class="caret"></b>
+						</button>
+						<ul class="dropdown-menu">
+							{{#each displayedGroups}}
+								<li><a class="group-name">{{groupName}}</a></li>
+							{{/each}}
+							<li>{{>groupCreation}}</li>
+						</ul>
 					</li>
-				{{/each}}
-			</ul>
-			
+				</div>
 
 			{{>studentCreation}}
+			</div>
 		</div>
-	</span>
+
+
+			<div class="col-md-offset-1 col-md-7">
+				<ul class="list-group">
+					{{#each displayedStudents}}
+						<li class="list-group-item">
+							{{prenom}} {{nom}} {{genre}}
+							<span id="iconModifStudent{{index}}" class="glyphicon glyphicon-pencil openStudentModification"></span>
+							<span id="iconCancelModifStudent{{index}}" class="glyphicon glyphicon-eject hide closeStudentModification"></span>
+							{{>studentModification}}
+						</li>
+					{{/each}}
+			</ul>	
+		</div>
+	</div>
 </template>
