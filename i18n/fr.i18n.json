@@ -31,18 +31,9 @@
 "bureau_prof_petit" : "Bureau",
 "salle_supp_attention" : "Attention ! Toute suppression d'une salle entraînera la perte irréversible de l'ensemble des données associées à cette salle.",
 "salle_supp" : "Sélectionnez la salle que vous souhaitez supprimer :",
-<<<<<<< Updated upstream
-"salle_supp_confirm1" :"Etes-vous sûr de vouloir supprimer la salle ",
-"salle_supp_confirm2" : "Si vous répondez oui, vous perdrez l'ensemble des données liées à cette salle.",
-"salle_supp_ok" : "Supprimer la salle ",
-"salle_supp_valid" : "Oui, j'en suis sûr",
-"salle_supp_novalid" : "Non, je garde cette salle",
-"revenir" : "Revenir à la page précédente",
 "nouvel_eleve" : "Ajouter un nouvel élève",
-"classe_selectionnee": "Classe Choisie"
-=======
+"classe_selectionnee": "Classe Choisie",
 "salle_supp_valid" : "Supprimer cette salle",
 "revenir" : "Revenir à la page précédente",
 "supp_room" : "Supprimer une salle"
->>>>>>> Stashed changes
 }
