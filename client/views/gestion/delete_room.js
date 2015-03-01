@@ -3,9 +3,9 @@ Template.deleteRoom.helpers({
           var result = new Array();
           for(var i=0; i<ecole.rooms.length; i++){
                var item = {
-                    roomName : ecole.rooms[i].nom,
-                    idecole : ecole._id,
-                    selected : ecole.rooms[i].nom === ecole.selectedRoom
+                    roomName : this.rooms[i].nom,
+                    idSchool : this._id,
+                    selected : this.rooms[i].nom === this.selectedRoom
                }
                result.push(item);
           }    
@@ -16,45 +16,29 @@ Template.deleteRoom.helpers({
 Template.deleteRoom.events({
      "click .room-item" : function(e) {
           e.defaultPrevented;
-          $("#button_delete").removeClass("hide");
-          $("#confirmDeleteRoom").addClass("hide");
-          Meteor.call("updateSelectedRoom", this.idecole, this.roomName);
+          Meteor.call("updateSelectedRoom", this.idSchool, this.roomName);
           $('[data-toggle="dropdown"]').parent().removeClass('open');
           return false;
      },
-     "click #okSupp" : function(e) {
-          e.defaultPrevented;
-          $("#selectDeleteRoom").addClass("hide");
-          $("#button_delete").addClass("hide");
-          $("#confirmDeleteRoom").removeClass("hide");
-          return false;
+     "click #stopSupp" : function(e) {
+          window.history.back();
      },
      "click #validSupp" : function(e) {
           e.defaultPrevented;
-          var salleToSup = this.ecole.selectedRoom;
-          var idecole = this.ecole._id;     
-          if(this.ecole.rooms.length > 1){
+          var salleToSup = this.selectedRoom;
+          var idSchool = this._id;  
+          if(this.rooms.length > 1){
                var newSelectedRoom = new String();
-               if(this.ecole.rooms[0].nom != salleToSup){
-                    newSelectedRoom = this.ecole.rooms[0].nom;
+               if(this.rooms[0].nom != salleToSup){
+                    newSelectedRoom = this.rooms[0].nom;
                } else {
-                    newSelectedRoom = this.ecole.rooms[1].nom;
+                    newSelectedRoom = this.rooms[1].nom;
                }
-               Meteor.call("updateSelectedRoom", idecole, newSelectedRoom);
+               Meteor.call("updateSelectedRoom", idSchool, newSelectedRoom);
           } else{
-               Meteor.call("updateSelectedRoom", idecole, "");
+               Meteor.call("updateSelectedRoom", idSchool, "");
           }
-          Meteor.call("deleteRoom", idecole, salleToSup);
-          $("#selectDeleteRoom").removeClass("hide");
-          $("#button_delete").removeClass("hide");
-          $("#confirmDeleteRoom").addClass("hide");
-          return false;
-     },
-     "click #stopValidSupp" : function(e) {
-          e.defaultPrevented;
-          $("#selectDeleteRoom").removeClass("hide");
-          $("#button_delete").removeClass("hide");
-          $("#confirmDeleteRoom").addClass("hide");
+          Meteor.call("deleteRoom", idSchool, salleToSup);
           return false;
      }
 });

@@ -27,16 +27,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.313708"
-     inkscape:cx="35.574668"
-     inkscape:cy="993.85645"
+     inkscape:zoom="0.81454783"
+     inkscape:cx="-29.42683"
+     inkscape:cy="811.29419"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1123"
-     inkscape:window-height="576"
-     inkscape:window-x="99"
-     inkscape:window-y="126"
+     inkscape:window-width="1216"
+     inkscape:window-height="661"
+     inkscape:window-x="51"
+     inkscape:window-y="0"
      inkscape:window-maximized="0">
     <inkscape:grid
        type="xygrid"
@@ -167,53 +167,6 @@
            inkscape:export-ydpi="90" />
       </g>
     </g>
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot2995-8-2"
-       style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0c5aa6;fill-opacity:1;stroke:none;font-family:STSong;-inkscape-font-specification:STSong Bold"
-       transform="translate(-116,-185.61282)"
-       inkscape:export-filename="/Users/mkl/Desktop/plp_meteor.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"><flowRegion
-         id="flowRegion2997-5-2"><rect
-           id="rect2999-6-5"
-           width="520"
-           height="271.42856"
-           x="180"
-           y="392.36218"
-           style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0c5aa6;fill-opacity:1;font-family:STSong;-inkscape-font-specification:STSong Bold" /></flowRegion><flowPara
-         id="flowPara6149-9"
-         style="font-size:48px">Pour les Profs</flowPara></flowRoot>    <g
-       id="g3047">
-      <g
-         id="g3015">
-        <g
-           id="g6151-5"
-           transform="translate(0,145)">
-          <rect
-             inkscape:export-ydpi="90"
-             inkscape:export-xdpi="90"
-             inkscape:export-filename="/Users/mkl/Desktop/plp_meteor.png"
-             style="fill:#0c5aa6;fill-opacity:1"
-             y="71.362183"
-             x="0"
-             height="46"
-             width="46"
-             id="rect4436-1-2" />
-          <rect
-             inkscape:export-ydpi="90"
-             inkscape:export-xdpi="90"
-             inkscape:export-filename="/Users/mkl/Desktop/plp_meteor.png"
-             transform="scale(1,-1)"
-             y="-97.362183"
-             x="20"
-             height="20"
-             width="20"
-             id="rect4946-6-0-9"
-             style="fill:#0acf00;fill-opacity:1" />
-        </g>
-      </g>
-    </g>
     <g
        id="g6407-2"
        transform="matrix(1.9998896,0,0,2,2,49.637817)">
@@ -314,6 +267,127 @@
            inkscape:export-xdpi="90"
            inkscape:export-ydpi="90" />
       </g>
+    </g>
+    <g
+       transform="matrix(0.28395062,0,0,0.28395062,251.18518,-162.43202)"
+       id="g3162">
+      <rect
+         y="677.36218"
+         x="415"
+         height="15"
+         width="65"
+         id="rect3305"
+         style="fill:#0acf00;fill-opacity:1" />
+      <rect
+         y="652.36218"
+         x="348"
+         height="10"
+         width="95"
+         id="rect3287"
+         style="fill:#135ca4;fill-opacity:1" />
+      <rect
+         y="657.36218"
+         x="353"
+         height="10"
+         width="85"
+         id="rect3289"
+         style="fill:#135ca4;fill-opacity:1" />
+      <rect
+         y="662.36218"
+         x="353"
+         height="80"
+         width="15"
+         id="rect3291"
+         style="fill:#135ca4;fill-opacity:1" />
+      <rect
+         y="662.36218"
+         x="423"
+         height="80"
+         width="15"
+         id="rect3293"
+         style="fill:#135ca4;fill-opacity:1" />
+      <rect
+         y="702.36218"
+         x="455"
+         height="40"
+         width="10"
+         id="rect3295"
+         style="fill:#135ca4;fill-opacity:1" />
+      <rect
+         y="622.36218"
+         x="500"
+         height="120"
+         width="10"
+         id="rect3297"
+         style="fill:#135ca4;fill-opacity:1" />
+      <rect
+         y="697.36218"
+         x="450"
+         height="10"
+         width="55"
+         id="rect3299"
+         style="fill:#135ca4;fill-opacity:1" />
+      <rect
+         y="722.36218"
+         x="460"
+         height="5"
+         width="45"
+         id="rect3301"
+         style="fill:#135ca4;fill-opacity:1" />
+      <rect
+         y="677.36218"
+         x="403"
+         height="65"
+         width="15"
+         id="rect3303"
+         style="fill:#0acf00;fill-opacity:1" />
+      <rect
+         y="622.36218"
+         x="450"
+         height="60"
+         width="30"
+         id="rect3307"
+         style="fill:#0acf00;fill-opacity:1" />
+      <rect
+         y="627.36218"
+         x="405"
+         height="10"
+         width="45"
+         id="rect3309"
+         style="fill:#0acf00;fill-opacity:1" />
+      <path
+         transform="translate(68,13)"
+         d="m 415,587.36218 c 0,11.0457 -8.95431,20 -20,20 -11.04569,0 -20,-8.9543 -20,-20 0,-11.04569 8.95431,-20 20,-20 11.04569,0 20,8.95431 20,20 z"
+         sodipodi:ry="20"
+         sodipodi:rx="20"
+         sodipodi:cy="587.36218"
+         sodipodi:cx="395"
+         id="path3311"
+         style="fill:#0acf00;fill-opacity:1"
+         sodipodi:type="arc" />
+      <rect
+         y="646.36218"
+         x="387"
+         height="4"
+         width="32"
+         id="rect3313"
+         style="fill:#135ca4;fill-opacity:1" />
+      <rect
+         transform="matrix(0.68595586,-0.72764315,0.72764315,0.68595586,0,0)"
+         y="734.13861"
+         x="-193.08516"
+         height="2"
+         width="7"
+         id="rect3315"
+         style="fill:#135ca4;fill-opacity:1" />
+      <rect
+         transform="matrix(0.67447129,-0.73830107,0.73830107,0.67447129,0,0)"
+         y="729.93915"
+         x="-181.01486"
+         height="2"
+         width="4"
+         id="rect3317"
+         style="fill:#135ca4;fill-opacity:1" />
     </g>
   </g>
 </svg>

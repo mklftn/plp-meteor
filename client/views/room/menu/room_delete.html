@@ -1,5 +1,8 @@
 <template name="roomDelete">
-<div>
-	<a href="{{pathFor 'deleteRoom' _id=ecole._id destination="roomPage"}}">supprimer</a>
-</div>
+	<div class="row espace_dessus">
+	<a class="textMenu hov" href="{{pathFor 'deleteRoom' _id=school._id}}">
+			<span class="col-md-1 no_padding_left biggly glyphicon glyphicon-trash"></span>
+			<p class="col-md-11 espaceButton">{{_ "supp_room"}}</p>
+		</a>
+	</div>
 </template>
