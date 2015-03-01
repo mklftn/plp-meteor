@@ -6,11 +6,11 @@
 		<div class="col-md-offset-5 col-md-2 no_padding_left no_padding_right">
 			<li class="dropdown sansPuce">
 				<button class="btn dropdown-toggle btn-lg btn-default active btn-block" data-hover="dropdown" data-toggle="dropdown">
-					<a id="roomActive">{{this.school.selectedRoom}}</a>
+					<a id="roomActive">{{this.ecole.selectedRoom}}</a>
 					<b class="caret"></b>
 				</button>
 				<ul class="dropdown-menu">
-					{{#each displayedRooms this.school}}
+					{{#each displayedRooms this.ecole}}
 					<li><a class="room-item">{{this.roomName}}</a></li>
 					{{/each}}
 				</ul>
@@ -21,11 +21,11 @@
 	<div id="button_delete" class="row espace_dessus">
 		<div class="col-md-offset-2 col-md-4 espaceButton">
 			<button id="okSupp" class="col-md-12 btn btn-lg btn-default">
-				{{_ "salle_supp_ok"}}{{this.school.selectedRoom}}
+				{{_ "salle_supp_ok"}}{{this.ecole.selectedRoom}}
 			</button>
 		</div>
 		<div class="col-md-4 espaceButton">
-			<a href="{{pathFor this.destination _id=this.school._id}}" id="stopSupp" class="col-md-12 btn btn-lg btn-default">
+			<a href="{{pathFor this.redirect _id=this.ecole._id}}" id="stopSupp" class="col-md-12 btn btn-lg btn-default">
 				{{_ "revenir"}}
 			</a>
 		</div>
@@ -33,7 +33,7 @@
 
 	<div id="confirmDeleteRoom" class="row espace_dessus hide">
 		<div class="row centerAlign">
-			<p>{{_ "salle_supp_confirm1"}}{{this.school.selectedRoom}} ?<br>
+			<p>{{_ "salle_supp_confirm1"}}{{this.ecole.selectedRoom}} ?<br>
 				{{_ "salle_supp_confirm2"}}</p>
 			</div>
 			<div id="button_confirm_delete" class="row espace_dessus">
