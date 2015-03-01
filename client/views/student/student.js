@@ -22,6 +22,7 @@ Template.studentPage.helpers({
                 var student = {
                     nom: this.students[i].nom,
                     prenom: this.students[i].prenom,
+                    genre: this.students[i].genre,
                     idSchool: this._id,
                     index: myindex++
                 }
@@ -33,6 +34,21 @@ Template.studentPage.helpers({
      	return result;
 
      }
+});
+
+Template.studentModification.helpers({
+
+    masculinChecked: function(){
+        if(this && this.genre != "feminin"){
+            return "checked";
+        }else return "";
+    },
+    femininChecked: function(){
+        if(this && this.genre == "feminin"){
+            return "checked";
+        } else return "";
+    }
+
 });
 
 Template.studentPage.events({
@@ -80,8 +96,9 @@ Template.studentCreation.events = {
 
     		var nom = $(e.target).find('[name=nom]').val();
     		var prenom = $(e.target).find('[name=prenom]').val();
+            var genre = $(e.target).find('[name=genre]:checked').val();
       			
-            Meteor.call("createStudent", this._id, this.selectedGroup, nom, prenom);
+            Meteor.call("createStudent", this._id, this.selectedGroup, nom, prenom, genre);
 
             return false;
   		}
@@ -95,10 +112,14 @@ Template.studentModification.events = {
 
         var nom = $(e.target).find('[name=nom]').val();
         var prenom = $(e.target).find('[name=prenom]').val();
+        var genre = $(e.target).find('[name=genre]:checked').val();
 
-        Meteor.call("modifyStudentName", this.idSchool, this.nomEleve, this.prenomEleve, nom, prenom);
+        Meteor.call("modifyStudentName", this, nom, prenom, genre);
 
         $(".studentModification").addClass("hide");
+
+        $("#iconModifStudent"+this.index).removeClass("hide");
+        $("#iconCancelModifStudent"+this.index).addClass("hide")
 
         return false;
     }

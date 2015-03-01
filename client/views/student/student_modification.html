@@ -1,8 +1,11 @@
 <template name="studentModification">
  <form id="studentModif{{index}}" class="main studentModification hide">
  	<span class="input-group">
-      				<input type="text" class="form-control" name="nom" placeholder="{{_ 'nom_eleve'}}">
-      				<input type="text" class="form-control" name="prenom" placeholder="{{_ 'prenom_eleve'}}">
+      				<input type="text" class="form-control" name="nom" placeholder="{{_ 'nom_eleve'}}" value="{{nom}}">
+      				<input type="text" class="form-control" name="prenom" placeholder="{{_ 'prenom_eleve'}}" value="{{prenom}}">
+
+      				<input type="radio" name="genre" value="masculin" {{masculinChecked}}>&nbsp;Bite
+                	<input type="radio" name="genre" value="feminin" {{femininChecked}}>&nbsp;Chatte 
     			</span>
 
    <button class="btn btn-default" type="Submit">
