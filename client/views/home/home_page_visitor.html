@@ -1,25 +1,22 @@
-<template name="home_page_visitor">
-	<div class="container-fluid home-page">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 bigtitle">
+<template name="homePageVisitor">
+	<div class="row homeVisit">
+		<div class="col-md-1 col-md-offset-1">
+			<div class="bigtitleicone">
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<h1 class="text-center subBigTitle">
+		<div class="col-md-5">
+			<div class="bigtitle">
+			</div>
+			<div class="subBigTitle">
+				<p>
 					{{_ "big_titre"}}
-				</h1>
+				</p>
 			</div>
 		</div>
-		<div class="row">
-			<div>
-				<div class="col-md-4 col-md-offset-4">
-					<h1 class="text-center subBigTitle2">
-						{{_ "decouvrir"}}
-					</h1>
-				</div>
-			</div>
+		<div id="logHomePage" class="col-md-3 col-md-offset-1">
+			{{> loginButtons}}
 		</div>
 	</div>
+
 </template>
 

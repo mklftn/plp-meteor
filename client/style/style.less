@@ -5,6 +5,43 @@
 @vertclair_plp: #73E56E;
 @height_carre: 120px;
 
+.iconeCenter{
+	display: block;
+    margin: auto;
+    width: 48px;
+}
+
+#login-buttons-password{
+	background-color: @bleu_plp;
+	border-color: @bleu_plp;
+}
+
+#forgot-password-link, #signup-link{
+	color: @bleu_plp;
+}
+
+#logHomePage{
+	padding-top: 10px;
+}
+
+#logHomePage > #login-dropdown-list > .dropdown-menu {
+	display: block;
+	border: solid @bleu_plp 1px;
+	box-shadow: none;
+}
+
+#logHomePage > #login-dropdown-list {
+	list-style-type:none;
+}
+
+#logHomePage > #login-dropdown-list > .dropdown-toggle {
+	display: none;
+}
+
+.homeVisit{
+	padding-top: 200px;
+}
+
 .hov:hover{
 	color: @bleu_plp;
 	cursor: pointer;
@@ -78,20 +115,10 @@
 }
 
 .subBigTitle {
-	padding-top: 50px;
+	padding-top: 10px;
 	color: @bleu_plp;
-	font-size: 2.4em;
+	font-size: 2em;
 	line-height: 1.5em;
-}
-
-.subBigTitle2{
-	margin-top: 50px;
-	color: @gris_plp;
-	font-weight: bold;
-	background-color: @bleu_plp;
-	font-size: 2.3em;
-	line-height: 1.3em;
-	border: solid 2px @vert_plp;
 }
 
 .carre{
@@ -128,16 +155,15 @@
 	padding-left: 0px;
 }
 
-.subBigTitle2:hover{
-	transform: scale(1.2);
-}
-
-.home-page{
-	padding-top: 60px;
-}
-
 .bigtitle{
-	width: 675px;
+	width: 575px;
+	height: 92px;
+	display: inline-block;
+	background: url("/image/plp_meteor.svg") -130px -50px no-repeat;
+}
+
+.bigtitleicone{
+	width: 92px;
 	height: 92px;
 	display: inline-block;
 	background: url("/image/plp_meteor.svg") 0px -50px no-repeat;
