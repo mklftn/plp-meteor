@@ -1,17 +1,19 @@
 Template.school_creation.events = {
 	"submit form": function(e) {
 		e.defaultPrevented;
+		var	user = Meteor.userId();
+		var nomSchool = $(e.target).find('[name=nom]').val();
 
-		var school = {
-			user: Meteor.userId(),
-			nomSchool: $(e.target).find('[name=nom]').val()
-		}
 
-		school._id = Schools.insert(school);
-		var newpath = "/etablissement/" + school._id;
-		$(e.target).find('[name=nom]').val("");
-		Router.go(newpath);
-		$('[data-toggle="dropdown"]').parent().removeClass('open');
+		Meteor.call("createSchool", user, nomSchool, function(error, result){
+			if(error){
+				throwError(error.reason);
+			} else{
+				Router.go('accueil',{"_id":result});
+			}
+			$(e.target).find('[name=nom]').val("");
+			$('[data-toggle="dropdown"]').parent().removeClass('open');
+		});
 		return false;
 	}
 };
