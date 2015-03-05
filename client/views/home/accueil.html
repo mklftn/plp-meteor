@@ -1,7 +1,7 @@
 <template name="accueil">
   {{> schoolItem}}
   <div class="container-fluid">
-    <div class="col-md-4 no-padding-left">
+    <div class="col-md-4 no_padding_left">
       <h3>{{_ "donnees"}}</h3>
     </div>
     <div class="col-md-7 col-md-offset-1">
@@ -13,6 +13,12 @@
         <a href="{{pathFor 'studentPage' _id=_id}}" class="link">
           <div class="carre">
             <h4 class="carre_titre">{{_ "classes"}}</h4>
+            <div class="col-md-12">
+              <div class="iconeCenter">
+                <div class="logo_classroom">
+                </div>
+              </div>
+            </div>
           </div>
         </a>
       </div>
@@ -22,7 +28,7 @@
             <h4 class="carre_titre">{{_ "salles"}}</h4>
             <div class="col-md-12">
               <div class="iconeCenter">
-                <div class="logo_room">
+                <div class="logo_seat">
                 </div>
               </div>
             </div>
@@ -32,16 +38,34 @@
       <div class="col-md-2 col-md-offset-1">
         <div class="carre">
           <h4 class="carre_titre">{{_ "pdc"}}</h4>
+          <div class="col-md-12">
+            <div class="iconeCenter">
+              <div class="logo_pdc">
+              </div>
+            </div>
+          </div>
         </div>
       </div>     
       <div class="col-md-2">
         <div class="carre">
           <h4 class="carre_titre">{{_ "appreciations_court"}}</h4>
+          <div class="col-md-12">
+            <div class="iconeCenter">
+              <div class="logo_appreciation">
+              </div>
+            </div>
+          </div>
         </div>
       </div>     
       <div class="col-md-2">
         <div class="carre">
           <h4 class="carre_titre">{{_ "eval_court"}}</h4>
+          <div class="col-md-12">
+            <div class="iconeCenter">
+              <div class="logo_eval">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -50,11 +74,19 @@
       <div class="col-md-2">
         <div class="carre">
           <h4 class="carre_titre">{{_ "sujets_court"}}</h4>
+          <div class="col-md-12">
+            <div class="iconeCenter">
+              <div class="logo_eval_sujet">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-2">
+      <!--
         <div class="carre">
         </div>
+      -->
       </div>
       <div class="col-md-1">
         <div class="col-md-6 sep">
@@ -62,19 +94,30 @@
       </div>     
       <div class="col-md-2">
         <div class="carre">
+        <h4 class="carre_titre">{{_ "cours"}}</h4>
+        <div class="col-md-12">
+            <div class="iconeCenter">
+              <div class="logo_room">
+              </div>
+            </div>
+          </div>
         </div>
       </div>     
       <div class="col-md-2">
+      <!--
         <div class="carre">
         </div>
+      -->
       </div>     
       <div class="col-md-2">
+      <!--
         <div class="carre">
         </div>
+      -->
       </div>
     </div>
 
-    <div class="col-md-4 no-padding-left">
+    <div class="col-md-4 no_padding_left">
       <h3>{{_ "general"}}</h3>
     </div>
     <div class="col-md-7 col-md-offset-1">
@@ -85,11 +128,23 @@
       <div class="col-md-2">
         <div class="carre">
           <h4 class="carre_titre">{{_ "info_perso_court"}}</h4>
+          <div class="col-md-12">
+            <div class="iconeCenter">
+              <div class="logo_info">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-2">
         <div class="carre">
           <h4 class="carre_titre">{{_ "etablissements"}}</h4>
+          <div class="col-md-12">
+            <div class="iconeCenter">
+              <div class="logo_school">
+              </div>
+            </div>
+          </div>
         </div>
       </div>    
       <div class="col-md-6 col-md-offset-1">
