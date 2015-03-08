@@ -45,7 +45,11 @@ function validerRoomName(id){
           var oldName = $("#newName").attr('data-oldName');
           var newName = $("#newName").val();
           if(oldName != newName){
-               Meteor.call("updateRoomName", id, oldName, newName);
+               Meteor.call("updateRoomName", id, oldName, newName, function(error, result){
+               if(error){
+                    throwError(error.reason);
+               }
+          });
                Meteor.call("updateSelectedRoom", id, newName);
           }
           $("#changeNameRoom").addClass("hide");
