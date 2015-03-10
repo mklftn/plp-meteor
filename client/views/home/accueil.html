@@ -1,11 +1,19 @@
 <template name="accueil">
-  {{> schoolItem}}
+
   <div class="container-fluid">
-    <div class="col-md-4 no_padding_left">
-      <h3>{{_ "donnees"}}</h3>
-    </div>
-    <div class="col-md-7 col-md-offset-1">
-      <h3>{{_ "applications"}}</h3>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>{{_ "donnees"}}</h3>
+      </div>
+      <div class="col-md-4 col-md-offset-1">
+        <h3>{{_ "applications"}}</h3>
+      </div>
+      <div class="col-md-3 ">
+        <div class="row">
+        <h4 class="school_name col-md-8">{{this.nomSchool}}</h4>
+          <div class="col-md-4 logo"></div>
+        </div>
+      </div>
     </div>
 
     <div class="row">

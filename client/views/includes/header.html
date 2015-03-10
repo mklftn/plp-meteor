@@ -1,9 +1,8 @@
 <template name="header">
- <nav class="navbar navbar-default" role="navigation">
+ <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
- 
-      <a class="navbar-brand logo" href="{{pathFor 'accueil' _id=_id}}"></a>
+      <a class="logoPlp" href="{{pathFor 'accueil' _id=_id}}"> Pour les Profs</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -28,7 +27,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> {{_ "applications"}} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">{{_ "pdc"}}</a></li>
+            <li><a href="{{pathFor 'pdcPage' _id=_id}}">{{_ "pdc"}}</a></li>
             <li><a href="#">{{_ "appreciations"}}</a></li>
             <li><a href="#">{{_ "eval"}}</a></li>
           </ul>
