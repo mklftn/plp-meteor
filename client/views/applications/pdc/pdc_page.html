@@ -1,5 +1,15 @@
 <template name="pdcPage">
 	<div class="row espace_dessus">
-		<p>page creation pdc</p>
+		<!-- menu comprenant les selects de la room, du nb de lignes et du nb de colonnes-->
+		<div  class="col-md-2">
+			{{>pdcTitle}}
+
+			{{>pdcSelect school=this}}
+		</div>
+
+		<!-- zone de visualisation de la room-->
+		<div class="col-md-offset-1 col-md-9">
+
+		</div>
 	</div>
 </template>

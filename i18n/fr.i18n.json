@@ -36,5 +36,6 @@
 "classe_selectionnee": "Classe Choisie",
 "salle_supp_valid" : "Supprimer cette salle",
 "revenir" : "Revenir à la page précédente",
-"supp_room" : "Supprimer une salle"
+"supp_room" : "Supprimer une salle",
+"pdc_select" : "Plan de classe"
 }
