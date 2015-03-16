@@ -1,6 +1,8 @@
 <template name="pdcSelect">
 	<!-- Sélection de la classe -->
-	<div class="row espace_dessous">
+	
+	<div class="row">
+	<h4>Classe</h4>
 		<div>
 			<div class="col-md-12 no_padding_left no_padding_right">
 				<li class="dropdown sansPuce">
@@ -20,7 +22,8 @@
 	</div>
 
 	<!-- Sélection de la salle -->
-	<div class="row espace_dessous">
+	<div class="row">
+	<h4>Salle</h4>
 		<div>
 			<div class="col-md-12 no_padding_left no_padding_right">
 				<li class="dropdown sansPuce">
@@ -39,5 +42,28 @@
 		</div>
 	</div>
 
+	<!-- Sélection de la répartition -->
+	<div class="row espace_dessous">
+	<h4>Répartition</h4>
+		<div>
+			<div class="col-md-12 no_padding_left no_padding_right">
+				<li class="dropdown sansPuce">
+					<button class="btn dropdown-toggle btn-lg btn-default active btn-block" data-hover="dropdown" data-toggle="dropdown">
+						<a class="elementSelectionne">{{repartitionActive}}</a>
+						<b class="caret"></b>
+					</button>
+					<ul class="dropdown-menu">
+						{{#each displayedRepartitions school}}
+						<li><a class="repartition-item">{{this.repartitionName}}</a></li>
+						{{/each}}
+						<li>{{>repartitionCreation school=school}}</li>
+					</ul>
+				</li>
+			</div>
+		</div>
+	</div>
+
 	<button id="sendTestMessage">test</button>
+	<button id="sendPlp">test envoi classe + room</button>
+	<button id="testPlp">test reactivevar</button>
 </template>

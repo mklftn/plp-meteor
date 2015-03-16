@@ -7,3 +7,13 @@ Schools.allow({
       return doc.user === userId; 
     }
 });
+
+Meteor.publish('currentData', function() {
+  return CurrentData.find({"user" : this.userId});
+});
+
+CurrentData.allow({
+    'update': function (userId,doc) {
+      return doc.user === userId; 
+    }
+});

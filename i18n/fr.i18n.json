@@ -37,5 +37,7 @@
 "salle_supp_valid" : "Supprimer cette salle",
 "revenir" : "Revenir à la page précédente",
 "supp_room" : "Supprimer une salle",
-"pdc_select" : "Plan de classe"
+"pdc_select" : "Plan de classe",
+"nom_repartition" : "Nom de la répartition",
+"repartition" : "Répartition"
 }

@@ -94,6 +94,36 @@ Schemas.Schools = new SimpleSchema({
     type: [String],
     label: "Le nom de la classe à laquelle appartient l'élève",
     max: 8
+  },
+  repartitions:{
+    type: [Object],
+    label: 'Les répartitions',
+    optional: true
+  },
+  "repartitions.$.nomRepartitions":{
+    type: [String],
+    label: "Le nom de la répartition",
+    min: 3,
+    max: 8
+  },
+  "repartitions.$.room":{
+    type: String,
+    label:"Le nom de la salle",
+    min: 3,
+    max: 8,
+  },
+  "repartitions.$.group":{
+    type: String,
+    label:"Le nom de la classe",
+    min: 3,
+    max: 8,
+  },
+    "repartitions.$.selectedRepartition":{
+    type: String,
+    label: "Le nom de la répartition sélectionnée",
+    min: 3,
+    max: 8,
+    optional: true
   }
 });
 
