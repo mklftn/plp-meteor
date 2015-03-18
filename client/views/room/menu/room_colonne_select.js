@@ -11,24 +11,23 @@ Template.roomColonneSelect.helpers({
 
           for(var i=1; i<10; i++){
                var selection = (nbColonne == i ? 'selected' : '');
-               var item = {
+               result.push({
                     nbColonnes : i,
                     selected : selection
-               }
-               result.push(item);
+               });
           }
           return result;
      }
 });
 
 Template.roomColonneSelect.events({
-     "change #colonnes" : function(e){
-          e.defaultPrevented;
-          var nomSalle = $("#roomActive").text();
+     "change #colonnes" : function(event){
+      
+          var nomSalle = this.school.selectedRoom;
+          //TODO revoir cette partie: on ne doit pas recuperer le contenu de la page
           var nbRow = $("#lignes option:selected").val();
-          var nbCol = $("#colonnes option:selected").val();
+          var nbCol = event.target.value;;
           updateColRoomAndSeat(this.school, nomSalle, nbRow, nbCol);
-          return false;
      }
 });
 

@@ -1,9 +1,9 @@
 Template.roomCreation.events = {
-	"submit form": function(e) {
+	"submit form": function(event) {
 
-		e.defaultPrevented;
+		event.defaultPrevented;
 		var idSchool = this._id;
-		var nomSalle = $(e.target).find('[name=nomSalle]').val();
+		var nomSalle = event.target.nomSalle.value;
 		var nbRow = 5;
 		var nbCol = 6;
 		Meteor.call("createRoom", idSchool, nomSalle, nbRow, nbCol, function(error, result){
@@ -13,8 +13,9 @@ Template.roomCreation.events = {
 		});
 		Meteor.call("createDefaultSeats", idSchool, nomSalle, nbRow, nbCol);
 		Meteor.call("updateSelectedRoom", idSchool, nomSalle);
+		//TODO - revoir ça 
 		$('[data-toggle="dropdown"]').parent().removeClass('open');
-		var nomSalle = $(e.target).find('[name=nomSalle]').val("");
+		event.target.nomSalle.value = "";
 
 		return false;
 	}

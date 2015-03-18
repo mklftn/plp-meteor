@@ -1,13 +1,12 @@
 Template.roomSelect.helpers({
      displayedRooms: function (school) {
           var result = new Array();
-          for(var i=0; i<school.rooms.length; i++){
-               var item = {
+          for(var i=0; i<school.rooms.length; i++){ 
+               result.push({
                     roomName : school.rooms[i].nom,
                     idSchool : school._id,
                     selected : school.rooms[i].nom === school.selectedRoom
-               }
-               result.push(item);
+               });
           }    
           return result;
      }
@@ -15,35 +14,28 @@ Template.roomSelect.helpers({
 
 Template.roomSelect.events({
      "click .room-item" : function(e) {
-          e.defaultPrevented;
           Meteor.call("updateSelectedRoom", this.idSchool, this.roomName);
-          $('[data-toggle="dropdown"]').parent().removeClass('open');
-          return false;
      },
-     "click #modifRoomName" : function(e) {
-          e.defaultPrevented;
-          $("#selectRoom").addClass("hide");
-          $("#changeNameRoom").removeClass("hide");
-          $("#newName").focus();
-          return false;
+     "click #modifRoomName" : function(event, template) {
+          template.find("#selectRoom").className = "hide";
+          template.find("#changeNameRoom").className = "";
+          template.find("#newName").focus();
      },
-     "click #validNewRoomName" : function(e) {
-          e.defaultPrevented;
+     "click #validNewRoomName" : function(event) {
           validerRoomName(this.school._id);
-          return false;
      },
-     "keypress #newName" : function(e) {
-          e.defaultPrevented;
-          if(e.which == 13) {
-          validerRoomName(this.school._id);
-          return false;
-  }
+     "keypress #newName" : function(event) {
+          if(event.which == 13) {
+               validerRoomName(this.school._id);
+          }
 }
 });
 
+//TODO - revoir cette methode
 function validerRoomName(id){
           var oldName = $("#newName").attr('data-oldName');
           var newName = $("#newName").val();
+          
           if(oldName != newName){
                Meteor.call("updateRoomName", id, oldName, newName, function(error, result){
                if(error){

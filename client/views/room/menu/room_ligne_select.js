@@ -11,24 +11,23 @@ Template.roomLigneSelect.helpers({
 
           for(var i=1; i<10; i++){
                var selection = (nbLigne == i ? 'selected' : '');
-               var item = {
+
+               result.push({
                     nbLignes : i,
                     selected : selection
-               }
-               result.push(item);
+               });
           }
           return result;
      }
 });
 
 Template.roomPage.events({
-     "change #lignes" : function(e){
-          e.defaultPrevented;
-          var nomSalle = $("#roomActive").text();
-          var nbRow = $("#lignes option:selected").val();
+     "change #lignes" : function(event, template){
+          var nomSalle = this.school.selectedRoom;
+          var nbRow = event.target.value;
+          //TODO: revoir cette partie, on ne doit pas recuperer de donnees depuis la page
           var nbCol = $("#colonnes option:selected").val();
           updateRowRoomAndSeat(this.school, nomSalle, nbRow, nbCol);
-          return false;
      }
 });
 

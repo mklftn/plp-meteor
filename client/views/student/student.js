@@ -6,12 +6,11 @@ Template.studentPage.helpers({
   for(var i=0; i<this.groups.length; i++){
    
     if(this.groups[i] != this.selectedGroup){
-      var item={
-        groupName : this.groups[i],
-        idSchool : this._id
-      }
-
-      result.push(item);
+      result.push(
+        {
+          groupName : this.groups[i],
+          idSchool : this._id
+        });
     }
   }  	
   return result;
@@ -24,15 +23,17 @@ Template.studentPage.helpers({
   for(var i=0; i<this.students.length; i++) {
    if( $.inArray(this.selectedGroup, this.students[i].groups) != -1){
 
-    var student = {
-      nom: this.students[i].nom,
-      prenom: this.students[i].prenom,
-      genre: this.students[i].genre,
-      idSchool: this._id,
-      index: myindex++
-    }
 
-    result.push(student);
+    result.push(
+      {
+        nom: this.students[i].nom,
+        prenom: this.students[i].prenom,
+        genre: this.students[i].genre,
+        idSchool: this._id,
+        index: myindex++
+      }
+
+    );
   }
 }
 
@@ -80,11 +81,10 @@ Template.studentPage.events({
 
 
 Template.groupCreation.events = {
-  "submit form": function(e) {
+  "submit form": function(event,template) {
 
-    e.defaultPrevented;
-
-    var nomClasse = $(e.target).find('[name=nomClasse]').val();
+    event.defaultPrevented;
+    var nomClasse = event.target.nomClasse.value;
 
     Meteor.call("createGroup", this._id, nomClasse, function(error, result){
       if(error){
@@ -99,15 +99,19 @@ Template.groupCreation.events = {
 
 
 Template.studentCreation.events = {
-  "submit form": function(e) {
+  "submit form": function(event) {
 
-    e.defaultPrevented;
+    event.defaultPrevented;
 
-    var nom = $(e.target).find('[name=nom]').val();
-    var prenom = $(e.target).find('[name=prenom]').val();
-    var genre = $(e.target).find('[name=genre]:checked').val();
+    var student = {
+         nom : event.target.nom.value,
+         prenom : event.target.prenom.value,
+         genre : event.target.genre.value,
+         groups: [this.selectedGroup]
+    }
+   
     
-    Meteor.call("createStudent", this._id, this.selectedGroup, nom, prenom, genre, function(error, result){
+    Meteor.call("createStudent", this._id, student, function(error, result){
       if(error){
         throwError(error.reason);
       }
@@ -123,11 +127,13 @@ Template.studentModification.events = {
 
     e.defaultPrevented;
 
-    var nom = $(e.target).find('[name=nom]').val();
-    var prenom = $(e.target).find('[name=prenom]').val();
-    var genre = $(e.target).find('[name=genre]:checked').val();
+     var newDataStudent = {
+         nom : event.target.nom.value,
+         prenom : event.target.prenom.value,
+         genre : event.target.genre.value
+    }
 
-    Meteor.call("modifyStudentName", this, nom, prenom, genre, function(error, result){
+    Meteor.call("modifyStudentName", this, newDataStudent, function(error, result){
       if(error){
         throwError(error.reason);
       }

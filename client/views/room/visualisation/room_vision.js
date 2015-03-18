@@ -1,17 +1,16 @@
 Template.roomVision.events({
-// Modifie suite a un click le statut seatactivity d'une place : active or inactive  
-"click .cel" : function(e) {
-     e.defaultPrevented;
-     var idSchool = this._id;
-     var nomSalle = this.selectedRoom;
-     var seatPosition = $(e.target).attr("data-numeroplace");
-     if($(e.target).attr("data-seatactivity") == "active"){
-          Meteor.call("supprimerSeat", idSchool, nomSalle, seatPosition);
-     } else{
+     // Modifie suite a un click le statut seatactivity d'une place : active or inactive  
+     "click .cel" : function(event) {
+
+       var idSchool = this.id;
+       var nomSalle = this.selectedRoom;
+       var seatPosition = event.target.getAttribute("data-numeroplace");
+       if(event.target.getAttribute("data-seatactivity") == "active"){
+           Meteor.call("supprimerSeat", idSchool, nomSalle, seatPosition);
+       } else{
           Meteor.call("ajouterSeat", idSchool, nomSalle, seatPosition);
-          return false;
-     };
-}
+       };
+     }
 });
 
 Template.roomVision.helpers({
@@ -38,47 +37,39 @@ Template.roomVision.helpers({
                for(var k=0; k<nbColonne; k++){
                     var l = k +1;
                     var place = (j * 10) + l;
-                    var seatActivity = new String();
-                    var mess = new String();
+                    var seatActivity;
+                    var mess;
                     if(jQuery.inArray(place, positions)!==-1){
                          seatAct = "active";
                     } else{
                          seatAct = "inactive";
                     }
 
-                    var col = {
+                    intColonnes.push({
                          colonne: k,
                          seat: place,
                          seatActivity: seatAct,
-                         _id: id,
+                         id: id,
                          selectedRoom: selectedR
 
-                    }
-                    intColonnes.push(col);
-               }
-               var lig = {
+                    });
+               } 
+
+               intLignes.push({
                     ligne: j,
                     colonnes: intColonnes
-               }
-               intLignes.push(lig);
+               });
           }
 
           //Objet renvoyé
-          var roomInfo = {
+          return {
                lignes: intLignes,
                nbTd: nbColonne,
                bigTitle: titre(nbColonne)
           }
-          return roomInfo;
      }
 });
 
-function titre(nbColonne){
-               var grandTitre = new Boolean();
-          if(nbColonne > 4){
-               grandTitre = true;
-          } else{
-               grandTitre = false;
-          }
-          return grandTitre;
+function titre(nbColonne){    
+          return nbColonne > 4;
 }

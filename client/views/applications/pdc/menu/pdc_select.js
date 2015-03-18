@@ -1,25 +1,23 @@
 Template.pdcSelect.helpers({
  displayedRooms: function (school) {
   var result = new Array();
-  for(var i=0; i<school.rooms.length; i++){
-   var item = {
-    roomName : school.rooms[i].nom,
-    idSchool : school._id,
-    selected : school.rooms[i].nom === school.selectedRoom
-  }
-  result.push(item);
-}    
-return result;
+  for(var i=0; i<school.rooms.length; i++){ 
+    result.push({
+     roomName : school.rooms[i].nom,
+     idSchool : school._id,
+     selected : school.rooms[i].nom === school.selectedRoom
+    });
+  }    
+  return result;
 },
 displayedGroups: function (school) {
   var result = new Array();
   for(var i=0; i<school.groups.length; i++){
-   var item={
+   result.push({
      groupName : school.groups[i],
      idSchool : school._id,
      selected : school.groups[i].nom === school.selectedGroup
-   }
-   result.push(item);
+   });
  }  
  return result;
 },
@@ -28,12 +26,10 @@ displayedRepartitions: function (school) {
   for(var i=0; i<school.repartitions.length; i++){
     if(school.repartitions[i].room === school.selectedRoom && school.repartitions[i].group === school.selectedGroup){
      for(var j=0; j<school.repartitions[i].nomRepartitions.length; j++){
-       var item = {
+      result.push({
         repartitionName : school.repartitions[i].nomRepartitions[j],
         idSchool : school._id,
-        //selected : school.repartitions[i].nomRepartitions[j] === school.repartitions[i].selectedRepartition
-      }
-      result.push(item);
+      });
     }
   }   
 }
@@ -59,28 +55,24 @@ Template.pdcSelect.created = function() {
 
 Template.pdcSelect.events({
  "click .room-item" : function(e, template) {
-  e.defaultPrevented;
   Meteor.call("updateSelectedRoom", this.idSchool, this.roomName);
   template.repartitionSelected.set("");
+  //TODO - a revoir
   $('[data-toggle="dropdown"]').parent().removeClass('open');
-  return false;
 },
 "click .group-item" : function(e, template) {
-  e.defaultPrevented;
   Meteor.call("updateSelectedGroup", this.idSchool, this.groupName);
   template.repartitionSelected.set("");
+  //TODO - a revoir
   $('[data-toggle="dropdown"]').parent().removeClass('open');
-  return false;
 },
 "click .repartition-item" : function(e, template) {
-  e.defaultPrevented;
   var school = template.data.school;
   template.repartitionSelected.set(this.repartitionName);
+  //TODO - a revoir
   $('[data-toggle="dropdown"]').parent().removeClass('open');
-  return false;
 },
 "click #sendTestMessage" : function(e,template) {
-  e.defaultPrevented;
   var message = "ça s'en va et ça revient !";
   Meteor.call('testApi', message, function (error, result) {
    if(error){
@@ -89,10 +81,9 @@ Template.pdcSelect.events({
     alert(result);
   }
 });
-  return false;
 },
 "click #sendPlp" :function(e,template) {
-  e.defaultPrevented;
+
   var school = template.data.school;
   var positions;
   var students = new Array();
@@ -104,23 +95,22 @@ Template.pdcSelect.events({
 
   for(var j=0; j<school.students.length; j++){
     if(jQuery.inArray(school.selectedGroup, school.students[j].groups)!==-1){
-     var item = {
-      lastname : school.students[j].nom,
-      firstname : school.students[j].prenom,
-      gender : school.students[j].genre,
+      students.push({
+        lastname : school.students[j].nom,
+        firstname : school.students[j].prenom,
+        gender : school.students[j].genre,
+      });
     }
-    students.push(item);
+  } 
+
+  var pdcDonneesToApi ={
+    groupStudent: {
+        students : students
+    },
+    girlBoy: false,
+    alignGirlBoy: false,
+    positions: positions
   }
-}
-var groupStudent = {
-  students : students
-}
-var pdcDonneesToApi ={
-  groupStudent: groupStudent,
-  girlBoy: false,
-  alignGirlBoy: false,
-  positions: positions
-}
 
 Meteor.call('pdcApi', pdcDonneesToApi, function (error, result) {
  if(error){
@@ -130,12 +120,9 @@ Meteor.call('pdcApi', pdcDonneesToApi, function (error, result) {
   alert(result);
 }
 });
-return false;
 },
 "click #testPlp" :function(e,template) {
-  e.defaultPrevented;
   alert(template.repartitionSelected.get());
-  return false;
 }
 });
 

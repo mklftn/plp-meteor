@@ -2,12 +2,11 @@ Template.deleteRoom.helpers({
      displayedRooms: function (ecole) {
           var result = new Array();
           for(var i=0; i<ecole.rooms.length; i++){
-               var item = {
+               result.push({
                     roomName : this.rooms[i].nom,
                     idSchool : this._id,
                     selected : this.rooms[i].nom === this.selectedRoom
-               }
-               result.push(item);
+               });
           }    
           return result;
      }
@@ -15,16 +14,15 @@ Template.deleteRoom.helpers({
 
 Template.deleteRoom.events({
      "click .room-item" : function(e) {
-          e.defaultPrevented;
           Meteor.call("updateSelectedRoom", this.idSchool, this.roomName);
+
+          //TODO - revoir ça
           $('[data-toggle="dropdown"]').parent().removeClass('open');
-          return false;
      },
      "click #stopSupp" : function(e) {
           window.history.back();
      },
      "click #validSupp" : function(e) {
-          e.defaultPrevented;
           var salleToSup = this.selectedRoom;
           var idSchool = this._id;  
           if(this.rooms.length > 1){
@@ -39,6 +37,5 @@ Template.deleteRoom.events({
                Meteor.call("updateSelectedRoom", idSchool, "");
           }
           Meteor.call("deleteRoom", idSchool, salleToSup);
-          return false;
      }
 });

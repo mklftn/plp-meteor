@@ -8,11 +8,11 @@
 						<div class="col-md-5 no_padding_left">
 							<select class="form-control" id="colonnes">
 								{{#each displayedColonnes school}}
-								{{#if selected}}
-								<option value="{{this.nbColonnes}}" selected="selected">{{this.nbColonnes}}</option>
-								{{else}}
-								<option value="{{this.nbColonnes}}">{{this.nbColonnes}}</option>
-								{{/if}}
+									{{#if selected}}
+										<option value="{{this.nbColonnes}}" selected="selected">{{this.nbColonnes}}</option>
+									{{else}}
+										<option value="{{this.nbColonnes}}">{{this.nbColonnes}}</option>
+									{{/if}}
 								{{/each}}
 							</select>
 						</div>
